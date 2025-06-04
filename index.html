@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Advice and Favorite Quote</title>
+    <title>RUBYFATH : Islamic Wisdom</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -15,7 +15,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/rubyfath-advice/main/photo_2025-06-04_20-43-26.jpg') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
             overflow-x: hidden;
             display: flex;
@@ -23,6 +24,7 @@
             align-items: center;
             position: relative;
             color: #fff;
+            padding: 20px;
         }
 
         body::before {
@@ -32,8 +34,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
         }
 
         .ocean-container {
@@ -54,12 +56,62 @@
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-            background: linear-gradient(45deg, #fff, #b0e0e6, #87ceeb);
+            background: linear-gradient(45deg, #fff, #e6d8b2, #d4af37);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(176, 224, 230, 0.5);
+            text-shadow: 0 0 20px rgba(230, 216, 178, 0.5);
             margin-bottom: 20px;
             animation: glow 3s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #e6d8b2;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            overflow: hidden;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-btn {
+            padding: 12px 25px;
+            background: transparent;
+            border: none;
+            color: #e6d8b2;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #d4af37, #b8860b);
+            color: #2c1e02;
+        }
+
+        .lang-btn:not(.active):hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .lang-btn i {
+            font-size: 1.2rem;
         }
 
         .quote-container {
@@ -70,15 +122,15 @@
 
         .glass-panel {
             flex: 1;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
-            transition: transform 0.4s, box-shadow 0.4s;
+            transition: all 0.4s ease;
         }
 
         .glass-panel::before {
@@ -95,12 +147,14 @@
 
         .glass-panel:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(230, 216, 178, 0.4);
         }
 
         h3 {
             font-size: 1.8rem;
-            color: #87ceeb;
+            color: #d4af37;
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
@@ -113,25 +167,26 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: linear-gradient(90deg, #87ceeb, transparent);
+            background: linear-gradient(90deg, #d4af37, transparent);
         }
 
         p {
             font-size: 1.3rem;
             line-height: 1.8;
             margin-bottom: 15px;
-            color: #f0f8ff;
+            color: #f8f3e6;
         }
 
         pre {
             font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
-            color: #e6f7ff;
+            color: #f8f3e6;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             display: inline-block;
             margin-top: 15px;
+            border-left: 3px solid #d4af37;
         }
 
         .controls {
@@ -142,8 +197,8 @@
         }
 
         .next-btn {
-            background: linear-gradient(45deg, #1e90ff, #00bfff);
-            color: white;
+            background: linear-gradient(45deg, #d4af37, #b8860b);
+            color: #2c1e02;
             border: none;
             padding: 15px 40px;
             font-size: 1.2rem;
@@ -154,12 +209,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
         .next-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(30, 144, 255, 0.6);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(45deg, #e6c252, #d4af37);
         }
 
         .music-control {
@@ -179,11 +235,12 @@
         .music-control:hover {
             transform: scale(1.1);
             background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .music-control i {
             font-size: 1.5rem;
-            color: #87ceeb;
+            color: #d4af37;
         }
 
         /* Animations for falling elements */
@@ -198,21 +255,21 @@
         .rain {
             width: 2px;
             height: 15px;
-            background: linear-gradient(to bottom, transparent, #87ceeb);
-            box-shadow: 0 0 10px #87ceeb;
+            background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.8));
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
         }
 
         .flower {
             font-size: 1.8rem;
-            text-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
         }
 
         .bubble {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(176, 224, 230, 0.8);
-            box-shadow: 0 0 10px #87ceeb;
+            background: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
         }
 
         @keyframes fall {
@@ -224,11 +281,11 @@
 
         @keyframes glow {
             0% {
-                text-shadow: 0 0 10px rgba(176, 224, 230, 0.5);
+                text-shadow: 0 0 10px rgba(230, 216, 178, 0.5);
             }
             100% {
-                text-shadow: 0 0 30px rgba(176, 224, 230, 0.8), 
-                             0 0 60px rgba(135, 206, 235, 0.6);
+                text-shadow: 0 0 30px rgba(230, 216, 178, 0.8), 
+                             0 0 60px rgba(212, 175, 55, 0.6);
             }
         }
 
@@ -237,7 +294,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(212, 175, 55, 0.8);
             animation: pop 1s forwards;
             pointer-events: none;
         }
@@ -251,6 +308,53 @@
                 transform: scale(10);
                 opacity: 0;
             }
+        }
+
+        .islamic-pattern {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .pattern-1 {
+            top: 10%;
+            left: 5%;
+            animation: rotate 30s linear infinite;
+        }
+
+        .pattern-2 {
+            bottom: 10%;
+            right: 5%;
+            animation: rotate-reverse 40s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        .floating-text {
+            position: absolute;
+            font-size: 0.8rem;
+            color: rgba(212, 175, 55, 0.7);
+            z-index: 5;
+            pointer-events: none;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(20vw); opacity: 0; }
         }
 
         @media (max-width: 768px) {
@@ -273,31 +377,67 @@
             p {
                 font-size: 1.1rem;
             }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .lang-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" id="lang-en">
+            <i class="fas fa-globe-americas"></i> English
+        </button>
+        <button class="lang-btn" id="lang-tr">
+            <i class="fas fa-globe-asia"></i> Türkçe
+        </button>
+    </div>
+
+    <!-- Islamic decorative patterns -->
+    <div class="islamic-pattern pattern-1">
+        <svg viewBox="0 0 100 100">
+            <path d="M50,15 a35,35 0 1,0 0,70 a35,35 0 1,0 0,-70" fill="none" stroke="#d4af37" stroke-width="2"></path>
+            <circle cx="50" cy="50" r="25" fill="none" stroke="#d4af37" stroke-width="1"></circle>
+            <path d="M30,30 L70,70 M30,70 L70,30" stroke="#d4af37" stroke-width="1"></path>
+        </svg>
+    </div>
+    
+    <div class="islamic-pattern pattern-2">
+        <svg viewBox="0 0 100 100">
+            <polygon points="50,15 65,50 50,85 35,50" fill="none" stroke="#d4af37" stroke-width="2"></polygon>
+            <circle cx="50" cy="50" r="20" fill="none" stroke="#d4af37" stroke-width="1"></circle>
+        </svg>
+    </div>
+    
     <div class="ocean-container">
         <div class="header">
-            <h1>RUBYFATH Advice and Favorite Quote</h1>
+            <h1 id="main-title">RUBYFATH : Favourate Quotes & Advice</h1>
+            <p class="subtitle" id="subtitle">Everyday challenges</p>
         </div>
         
         <div class="quote-container">
             <div class="glass-panel">
-                <h3>YOUR QUESTION:</h3>
-                <p>"But everyone else is doing it. It is normal. So why shouldn't I?"</p>
+                <h3 id="question-title">YOUR QUESTION:</h3>
+                <p id="question-text">"But everyone else is doing it. It is normal. So why shouldn't I?"</p>
             </div>
             
             <div class="glass-panel">
-                <h3>ANSWER:</h3>
-                <p>"And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies."</p>
-                <pre>Qur'an 6:116</pre>
+                <h3 id="answer-title">DIVINE ANSWER:</h3>
+                <p id="answer-text">"And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies."</p>
+                <pre id="source-text">Qur'an 6:116</pre>
             </div>
         </div>
         
         <div class="controls">
-            <button class="next-btn">
-                Next Advice <i class="fas fa-arrow-right"></i>
+            <button class="next-btn" id="next-btn">
+                <span id="next-text">Next Advice</span> <i class="fas fa-arrow-right"></i>
             </button>
             <div class="music-control" id="music-control">
                 <i class="fas fa-music"></i>
@@ -311,6 +451,152 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Language content
+            const content = {
+                en: {
+                    title: "Islamic Wisdom",
+                    subtitle: "Guidance from the Quran and Sunnah for everyday challenges",
+                    questionTitle: "YOUR QUESTION:",
+                    questionText: "But everyone else is doing it. It is normal. So why shouldn't I?",
+                    answerTitle: "DIVINE ANSWER:",
+                    answerText: "And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies.",
+                    sourceText: "Qur'an 6:116",
+                    nextText: "Next Advice"
+                },
+                tr: {
+                    title: "İslami Bilgelik",
+                    subtitle: "Günlük zorluklar için Kuran ve Sünnet rehberliği",
+                    questionTitle: "SORUNUZ:",
+                    questionText: "Herkes yapıyor, bu normal. Öyleyse neden yapmayayım?",
+                    answerTitle: "İLAHİ CEVAP:",
+                    answerText: "Yeryüzündeki insanların çoğuna uyacak olursan, seni Allah'ın yolundan saptırırlar. Onlar ancak zanna uyarlar ve onlar sadece yalan söylerler.",
+                    sourceText: "Kur'an-ı Kerim 6:116",
+                    nextText: "Sonraki Tavsiye"
+                }
+            };
+            
+            // Advice sets
+            const adviceSets = {
+                en: [
+                    {
+                        question: "But everyone else is doing it. It is normal. So why shouldn't I?",
+                        answer: "And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies.",
+                        source: "Qur'an 6:116"
+                    },
+                    {
+                        question: "How can I stay strong in my faith when facing challenges?",
+                        answer: "Allah does not burden a soul beyond that it can bear. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned.",
+                        source: "Qur'an 2:286"
+                    },
+                    {
+                        question: "Why do good people suffer while bad people prosper?",
+                        answer: "Do people think they will be left alone after saying 'We believe' without being put to the test? We tested those who went before them. Allah will certainly mark out which ones are truthful and which are lying.",
+                        source: "Qur'an 29:2-3"
+                    },
+                    {
+                        question: "How can I find peace in difficult times?",
+                        answer: "Verily, in the remembrance of Allah do hearts find rest.",
+                        source: "Qur'an 13:28"
+                    },
+                    {
+                        question: "What should I do when I feel overwhelmed by sins?",
+                        answer: "Say, 'O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.'",
+                        source: "Qur'an 39:53"
+                    }
+                ],
+                tr: [
+                    {
+                        question: "Herkes yapıyor, bu normal. Öyleyse neden yapmayayım?",
+                        answer: "Yeryüzündeki insanların çoğuna uyacak olursan, seni Allah'ın yolundan saptırırlar. Onlar ancak zanna uyarlar ve onlar sadece yalan söylerler.",
+                        source: "Kur'an-ı Kerim 6:116"
+                    },
+                    {
+                        question: "Zorluklarla karşılaştığımda imanımı nasıl güçlü tutabilirim?",
+                        answer: "Allah, hiç kimseye gücünün yettiğinden başkasını yüklemez. Herkesin kazandığı iyilik kendi yararına, kötülük de kendi zararınadır.",
+                        source: "Kur'an-ı Kerim 2:286"
+                    },
+                    {
+                        question: "Neden iyi insanlar acı çekerken kötü insanlar refah içinde?",
+                        answer: "İnsanlar, 'İnandık' demekle imtihan edilmeden bırakılacaklarını mı sandılar? Andolsun ki, biz onlardan öncekileri de imtihan etmişizdir. Allah elbette doğruları ortaya çıkaracak ve yalancıları da mutlaka ortaya koyacaktır.",
+                        source: "Kur'an-ı Kerim 29:2-3"
+                    },
+                    {
+                        question: "Zor zamanlarda huzuru nasıl bulabilirim?",
+                        answer: "Biliniz ki kalpler ancak Allah'ı anmakla huzur bulur.",
+                        source: "Kur'an-ı Kerim 13:28"
+                    },
+                    {
+                        question: "Günahlarım beni bunaltıyorsa ne yapmalıyım?",
+                        answer: "De ki: 'Ey kendi nefisleri aleyhine haddi aşan kullarım! Allah'ın rahmetinden ümidinizi kesmeyin. Şüphesiz Allah bütün günahları bağışlar. Çünkü O, çok bağışlayandır, çok merhamet edendir.'",
+                        source: "Kur'an-ı Kerim 39:53"
+                    }
+                ]
+            };
+            
+            // Set initial language
+            let currentLanguage = 'en';
+            let currentSet = 0;
+            
+            // DOM elements
+            const langEnBtn = document.getElementById('lang-en');
+            const langTrBtn = document.getElementById('lang-tr');
+            const mainTitle = document.getElementById('main-title');
+            const subtitle = document.getElementById('subtitle');
+            const questionTitle = document.getElementById('question-title');
+            const questionText = document.getElementById('question-text');
+            const answerTitle = document.getElementById('answer-title');
+            const answerText = document.getElementById('answer-text');
+            const sourceText = document.getElementById('source-text');
+            const nextText = document.getElementById('next-text');
+            const nextBtn = document.getElementById('next-btn');
+            
+            // Update content based on language
+            function updateContent() {
+                // Update static text
+                mainTitle.textContent = content[currentLanguage].title;
+                subtitle.textContent = content[currentLanguage].subtitle;
+                questionTitle.textContent = content[currentLanguage].questionTitle;
+                answerTitle.textContent = content[currentLanguage].answerTitle;
+                nextText.textContent = content[currentLanguage].nextText;
+                
+                // Update advice set
+                const set = adviceSets[currentLanguage][currentSet];
+                questionText.textContent = `"${set.question}"`;
+                answerText.textContent = `"${set.answer}"`;
+                sourceText.textContent = set.source;
+                
+                // Update active button
+                langEnBtn.classList.toggle('active', currentLanguage === 'en');
+                langTrBtn.classList.toggle('active', currentLanguage === 'tr');
+            }
+            
+            // Language toggle event listeners
+            langEnBtn.addEventListener('click', function() {
+                if (currentLanguage !== 'en') {
+                    currentLanguage = 'en';
+                    updateContent();
+                }
+            });
+            
+            langTrBtn.addEventListener('click', function() {
+                if (currentLanguage !== 'tr') {
+                    currentLanguage = 'tr';
+                    updateContent();
+                }
+            });
+            
+            // Next button functionality
+            nextBtn.addEventListener('click', function() {
+                currentSet = (currentSet + 1) % adviceSets[currentLanguage].length;
+                updateContent();
+                
+                // Button animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+            
             // Create falling elements
             function createFallingElements() {
                 const elements = ['rain', 'flower', 'bubble'];
@@ -351,6 +637,36 @@
                 }, 200);
             }
             
+            // Create floating Arabic text
+            function createFloatingText() {
+                const texts = ['الله', 'محمد', 'الحمد لله', 'سبحان الله', 'الله أكبر'];
+                setInterval(() => {
+                    const text = document.createElement('div');
+                    text.className = 'floating-text';
+                    text.textContent = texts[Math.floor(Math.random() * texts.length)];
+                    
+                    // Position
+                    const leftPos = Math.random() * 90;
+                    text.style.left = `${leftPos}vw`;
+                    text.style.top = '100vh';
+                    
+                    // Animation duration
+                    const duration = 15 + Math.random() * 15;
+                    text.style.animationDuration = `${duration}s`;
+                    
+                    // Font size
+                    const size = 0.8 + Math.random() * 1.2;
+                    text.style.fontSize = `${size}rem`;
+                    
+                    document.body.appendChild(text);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        text.remove();
+                    }, duration * 1000);
+                }, 3000);
+            }
+            
             // Create pop effects
             function createPopEffect() {
                 setInterval(() => {
@@ -364,7 +680,7 @@
                     pop.style.top = `${top}vh`;
                     
                     // Random color
-                    const colors = ['#87ceeb', '#b0e0e6', '#e0ffff', '#afeeee'];
+                    const colors = ['#d4af37', '#e6c252', '#f8e8a0', '#b8860b'];
                     pop.style.background = colors[Math.floor(Math.random() * colors.length)];
                     
                     document.body.appendChild(pop);
@@ -399,66 +715,11 @@
                 }, 300);
             });
             
-            // Next button functionality
-            const nextBtn = document.querySelector('.next-btn');
-            const questionPanel = document.querySelector('.glass-panel:first-child p');
-            const answerPanel = document.querySelector('.glass-panel:nth-child(2) p');
-            const sourcePanel = document.querySelector('.glass-panel:nth-child(2) pre');
-            
-            const adviceSets = [
-                {
-                    question: "But everyone else is doing it. It is normal. So why shouldn't I?",
-                    answer: "And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies.",
-                    source: "Qur'an 6:116"
-                },
-                {
-                    question: "How can I stay strong in my faith when facing challenges?",
-                    answer: "Allah does not burden a soul beyond that it can bear. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned.",
-                    source: "Qur'an 2:286"
-                },
-                {
-                    question: "Why do good people suffer while bad people prosper?",
-                    answer: "Do people think they will be left alone after saying 'We believe' without being put to the test? We tested those who went before them. Allah will certainly mark out which ones are truthful and which are lying.",
-                    source: "Qur'an 29:2-3"
-                },
-                {
-                    question: "How can I find peace in difficult times?",
-                    answer: "Verily, in the remembrance of Allah do hearts find rest.",
-                    source: "Qur'an 13:28"
-                }
-            ];
-            
-            let currentSet = 0;
-            
-            nextBtn.addEventListener('click', function() {
-                currentSet = (currentSet + 1) % adviceSets.length;
-                const set = adviceSets[currentSet];
-                
-                // Update content with animation
-                questionPanel.style.opacity = 0;
-                answerPanel.style.opacity = 0;
-                sourcePanel.style.opacity = 0;
-                
-                setTimeout(() => {
-                    questionPanel.textContent = `"${set.question}"`;
-                    answerPanel.textContent = `"${set.answer}"`;
-                    sourcePanel.textContent = set.source;
-                    
-                    questionPanel.style.opacity = 1;
-                    answerPanel.style.opacity = 1;
-                    sourcePanel.style.opacity = 1;
-                }, 300);
-                
-                // Button animation
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
-            
-            // Initialize effects
+            // Initialize content and effects
+            updateContent();
             createFallingElements();
             createPopEffect();
+            createFloatingText();
         });
     </script>
 </body>
