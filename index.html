@@ -15,8 +15,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/rubyfath-advice/main/photo_2025-06-04_20-43-26.jpg') no-repeat center center fixed;
+            background: linear-gradient(135deg, #1a1f2d, #0a0e17), 
+                        url('https://raw.githubusercontent.com/Ayaaba-Fatawu-Sumaila/rubyfath-advice/main/photo_2025-06-04_20-43-26.jpg') no-repeat center center fixed;
             background-size: cover;
+            background-blend-mode: multiply;
             min-height: 100vh;
             overflow-x: hidden;
             display: flex;
@@ -25,6 +27,7 @@
             position: relative;
             color: #fff;
             padding: 20px;
+            line-height: 1.6;
         }
 
         body::before {
@@ -34,23 +37,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: radial-gradient(circle at center, transparent 10%, rgba(0, 0, 0, 0.85) 90%);
             z-index: 0;
         }
 
+        /* Main Container */
         .ocean-container {
             display: flex;
             flex-direction: column;
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px;
             padding: 30px;
             z-index: 10;
+            position: relative;
         }
 
+        /* Header Section */
         .header {
             text-align: center;
             margin-bottom: 40px;
             position: relative;
+            padding: 20px;
         }
 
         h1 {
@@ -70,6 +77,7 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            font-weight: 300;
         }
 
         /* Language Toggle */
@@ -114,7 +122,8 @@
             font-size: 1.2rem;
         }
 
-        .quote-container {
+        /* Content Area */
+        .content-area {
             display: flex;
             gap: 30px;
             margin-bottom: 40px;
@@ -122,15 +131,18 @@
 
         .glass-panel {
             flex: 1;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(20, 25, 40, 0.7);
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
         }
 
         .glass-panel::before {
@@ -140,7 +152,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
             transform: rotate(30deg);
             z-index: -1;
         }
@@ -148,47 +160,65 @@
         .glass-panel:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(230, 216, 178, 0.4);
+            border: 1px solid rgba(230, 216, 178, 0.5);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .panel-header i {
+            color: #d4af37;
+            font-size: 1.8rem;
         }
 
         h3 {
             font-size: 1.8rem;
             color: #d4af37;
-            margin-bottom: 20px;
-            position: relative;
             display: inline-block;
+            font-weight: 600;
         }
 
-        h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #d4af37, transparent);
+        .panel-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        p {
+        .question-text, .answer-text {
             font-size: 1.3rem;
             line-height: 1.8;
             margin-bottom: 15px;
             color: #f8f3e6;
-        }
-
-        pre {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            color: #f8f3e6;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            display: inline-block;
-            margin-top: 15px;
             border-left: 3px solid #d4af37;
         }
 
+        .source-container {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .source-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: #f8f3e6;
+            padding: 10px 15px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 10px;
+            display: inline-block;
+            font-style: italic;
+        }
+
+        /* Controls */
         .controls {
             display: flex;
             justify-content: center;
@@ -241,6 +271,32 @@
         .music-control i {
             font-size: 1.5rem;
             color: #d4af37;
+        }
+
+        /* Progress Indicator */
+        .progress-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .progress-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active {
+            background: #d4af37;
+            transform: scale(1.2);
         }
 
         /* Animations for falling elements */
@@ -314,7 +370,7 @@
             position: absolute;
             width: 200px;
             height: 200px;
-            opacity: 0.1;
+            opacity: 0.08;
             z-index: 5;
             pointer-events: none;
         }
@@ -348,6 +404,7 @@
             z-index: 5;
             pointer-events: none;
             animation: float 20s linear infinite;
+            font-family: 'Playfair Display', serif;
         }
 
         @keyframes float {
@@ -357,11 +414,28 @@
             100% { transform: translateY(-100vh) translateX(20vw); opacity: 0; }
         }
 
-        @media (max-width: 768px) {
-            .quote-container {
-                flex-direction: column;
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.9rem;
+            color: rgba(230, 216, 178, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
             }
             
+            .content-area {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
@@ -374,7 +448,7 @@
                 font-size: 1.5rem;
             }
             
-            p {
+            .question-text, .answer-text {
                 font-size: 1.1rem;
             }
             
@@ -385,6 +459,30 @@
             .lang-btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
+            }
+            
+            .next-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .panel-header i {
+                font-size: 1.4rem;
+            }
+            
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .lang-btn {
+                padding: 8px 12px;
             }
         }
     </style>
@@ -418,20 +516,38 @@
     
     <div class="ocean-container">
         <div class="header">
-            <h1 id="main-title">RUBYFATH: Favourate Quotes & Advice</h1>
-            <p class="subtitle" id="subtitle">Everyday challenges</p>
+            <h1 id="main-title">RUBYFATH: FAVOURITE QUOTES AND ADVICE</h1>
+            <p class="subtitle" id="subtitle">Everyday Challenges</p>
         </div>
         
-        <div class="quote-container">
+        <div class="content-area">
             <div class="glass-panel">
-                <h3 id="question-title">YOUR QUESTION:</h3>
-                <p id="question-text">"But everyone else is doing it. It is normal. So why shouldn't I?"</p>
+                <div class="panel-header">
+                    <i class="fas fa-question-circle"></i>
+                    <h3 id="question-title">YOUR QUESTION:</h3>
+                </div>
+                <div class="panel-content">
+                    <p class="question-text" id="question-text">"But everyone else is doing it. It is normal. So why shouldn't I?"</p>
+                </div>
             </div>
             
             <div class="glass-panel">
-                <h3 id="answer-title">ANSWER:</h3>
-                <p id="answer-text">"And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies."</p>
-                <pre id="source-text">Qur'an 6:116</pre>
+                <div class="panel-header">
+                    <i class="fas fa-star-and-crescent"></i>
+                    <h3 id="answer-title">ANSWER:</h3>
+                </div>
+                <div class="panel-content">
+                    <p class="answer-text" id="answer-text">"And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies."</p>
+                    <div class="source-container">
+                        <span class="source-text" id="source-text">Qur'an 6:116</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-dots" id="progress-dots">
+                <!-- Progress dots will be generated by JavaScript -->
             </div>
         </div>
         
@@ -442,6 +558,10 @@
             <div class="music-control" id="music-control">
                 <i class="fas fa-music"></i>
             </div>
+        </div>
+        
+        <div class="footer">
+            <p>Seek knowledge from the cradle to the grave</p>
         </div>
     </div>
     
@@ -454,23 +574,17 @@
             // Language content
             const content = {
                 en: {
-                    title: "Islamic Wisdom",
-                    subtitle: "Guidance from the Quran and Sunnah for everyday challenges",
+                    title: "RUBYFATH: FAVOURITE QUOTES AND ADVICE",
+                    subtitle: "Everyday challenges",
                     questionTitle: "YOUR QUESTION:",
-                    questionText: "But everyone else is doing it. It is normal. So why shouldn't I?",
-                    answerTitle: "DIVINE ANSWER:",
-                    answerText: "And if you follow most of those on earth, they will mislead you far from Allah's path. They follow nothing except conjectures, and they do nothing except lies.",
-                    sourceText: "Qur'an 6:116",
+                    answerTitle: " ANSWER:",
                     nextText: "Next Advice"
                 },
                 tr: {
-                    title: "İslami Bilgelik",
-                    subtitle: "Günlük zorluklar için Kuran ve Sünnet rehberliği",
+                    title: "RUBYFATH: FAVORİ SÖZLER VE TAVSİYELER",
+                    subtitle: "Günlük ZORLUKLAR",
                     questionTitle: "SORUNUZ:",
-                    questionText: "Herkes yapıyor, bu normal. Öyleyse neden yapmayayım?",
-                    answerTitle: "İLAHİ CEVAP:",
-                    answerText: "Yeryüzündeki insanların çoğuna uyacak olursan, seni Allah'ın yolundan saptırırlar. Onlar ancak zanna uyarlar ve onlar sadece yalan söylerler.",
-                    sourceText: "Kur'an-ı Kerim 6:116",
+                    answerTitle: "CEVAP:",
                     nextText: "Sonraki Tavsiye"
                 }
             };
@@ -549,6 +663,27 @@
             const sourceText = document.getElementById('source-text');
             const nextText = document.getElementById('next-text');
             const nextBtn = document.getElementById('next-btn');
+            const progressDots = document.getElementById('progress-dots');
+            const musicControl = document.getElementById('music-control');
+            const backgroundMusic = document.getElementById('background-music');
+            
+            // Initialize progress dots
+            function initProgressDots() {
+                progressDots.innerHTML = '';
+                const count = adviceSets[currentLanguage].length;
+                for (let i = 0; i < count; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'progress-dot';
+                    if (i === currentSet) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', () => {
+                        currentSet = i;
+                        updateContent();
+                    });
+                    progressDots.appendChild(dot);
+                }
+            }
             
             // Update content based on language
             function updateContent() {
@@ -568,12 +703,19 @@
                 // Update active button
                 langEnBtn.classList.toggle('active', currentLanguage === 'en');
                 langTrBtn.classList.toggle('active', currentLanguage === 'tr');
+                
+                // Update progress dots
+                const dots = document.querySelectorAll('.progress-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSet);
+                });
             }
             
             // Language toggle event listeners
             langEnBtn.addEventListener('click', function() {
                 if (currentLanguage !== 'en') {
                     currentLanguage = 'en';
+                    initProgressDots();
                     updateContent();
                 }
             });
@@ -581,6 +723,7 @@
             langTrBtn.addEventListener('click', function() {
                 if (currentLanguage !== 'tr') {
                     currentLanguage = 'tr';
+                    initProgressDots();
                     updateContent();
                 }
             });
@@ -639,7 +782,7 @@
             
             // Create floating Arabic text
             function createFloatingText() {
-                const texts = ['الله', 'محمد', 'الحمد لله', 'سبحان الله', 'الله أكبر'];
+                const texts = ['الله', 'محمد', 'الحمد لله', 'سبحان الله', 'الله أكبر', 'رَّبِّ زِدْنِي عِلْمًا', 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ'];
                 setInterval(() => {
                     const text = document.createElement('div');
                     text.className = 'floating-text';
@@ -693,8 +836,6 @@
             }
             
             // Music control
-            const musicControl = document.getElementById('music-control');
-            const backgroundMusic = document.getElementById('background-music');
             let musicPlaying = false;
             
             musicControl.addEventListener('click', function() {
@@ -716,6 +857,7 @@
             });
             
             // Initialize content and effects
+            initProgressDots();
             updateContent();
             createFallingElements();
             createPopEffect();
